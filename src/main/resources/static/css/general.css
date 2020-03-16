@@ -1,0 +1,47 @@
+body {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(180deg,
+    rgba(255,212,66,0.918) 0%, rgba(243,115,53,0.918) 0%,
+    rgba(245,132,52,0.918) 0%, rgba(253,200,48,0.918) 34.03%,
+    rgba(255,250,4,0.945) 59.96%, rgba(255,255,0,0.949) 100%) fixed;
+}
+
+input::placeholder{
+    color: #707070;
+    opacity: 0.5;
+}
+
+input{
+    border-radius: 1.5em;
+    border: solid 0.3em  #4CAF50;;
+    background-color: #ffffff;
+    line-height: 2.5em;
+    font-size: 1em;
+    text-align: left;
+    outline: none;
+    padding-left: 1em;
+}
+
+input:hover,input:focus{
+    border-color: green;
+}
+
+.messages {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.CheckBox {
+    background: #4CAF50;
+
+}
+

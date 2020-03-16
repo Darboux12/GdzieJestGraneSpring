@@ -1,0 +1,174 @@
+.Wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 1em;
+    padding: 5em;
+
+}
+
+.TopBar{
+    grid-area: 1 / 1 / span 1 / span 4;
+}
+
+#TopBarMobile{
+    display: none;
+}
+
+.EventInformation{
+    grid-area: 2 / 1 / span 1 / span 3;
+    background: white;
+    position: relative;
+    height: max-content;
+    border: solid 5px #6dcb1b;
+}
+
+.EventInformationFieldContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    padding: 0.5em;
+
+}
+
+.InformationField{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border:  solid 3px #6dcb1b;
+    box-sizing: border-box;
+    background: white;
+    margin: 0.5em 0;
+}
+
+#FieldName{
+    font-weight: bold;
+    font-size: 1.5em;
+    border-bottom:  solid 3px #6dcb1b;
+}
+
+#FieldInfo{
+    font-size: 1.2em;
+}
+
+.EventInformation > img{
+    width: 50%;
+    position: absolute;
+    border-left: solid 3px #6dcb1b;
+    border-bottom: solid 3px #6dcb1b;
+    top: 0;
+    right: 0;
+}
+
+.EventDescription{
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-left: solid 3px #6dcb1b;
+    border-top: solid 3px #6dcb1b;
+
+}
+
+.EventDescription > h{
+    width: auto;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 0.5em;
+}
+
+.EventDescription > textarea{
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    text-align: center;
+
+}
+
+.RightNav{
+    grid-area: 2 / 4 / span 1 / span 1;
+    background: gray;
+}
+
+#JoinButton{
+
+    border-radius: 0;
+    background-color: blueviolet;
+    line-height: 2.5em;
+    font-size: 1em;
+    text-align: center;
+    outline: none;
+    text-decoration: none ;
+    border: solid 3px rgba(63, 37, 37, 0.82);
+    background-color: rgba(167, 18, 212, 0.92);
+    padding: 1em 2em;
+    color: white;
+    font-weight: bold;
+    margin-top: 2em;
+}
+
+#JoinButton:hover{
+    background: darkmagenta;
+}
+
+@media only screen and (max-width : 450px){
+
+    .Wrapper{
+        padding: 0;
+    }
+
+    #TopBarMobile{
+        display: flex;
+    }
+
+    #TopBarStandard{
+        display: none;
+    }
+
+    .RightNav{
+        display: none;
+    }
+
+    .EventInformation{
+        grid-area: 2 / 1 / span 1 / span 4;
+        border: none;
+        flex-direction: column;
+    }
+
+    .EventInformation > img{
+        position: static;
+        width: 100%;
+    }
+
+    .EventDescription{
+        position: static;
+        width: 100%;
+    }
+
+    .EventInformationFieldContainer{
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+
+    }
+
+    body{
+        font-size: 10px;
+    }
+
+
+
+
+
+
+
+
+}

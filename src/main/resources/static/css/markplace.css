@@ -1,0 +1,32 @@
+.Wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 1em;
+    padding: 5em;
+}
+
+.TopBar{
+    grid-area: 1 / 1 / span 1 / span 4;
+}
+
+#TopBarMobile{
+    display: none;
+}
+
+@media only screen and (max-width : 450px) {
+
+    .Wrapper {
+        padding: 0;
+    }
+
+    #TopBarMobile {
+        display: flex;
+    }
+
+    #TopBarStandard {
+        display: none;
+    }
+
+
+}

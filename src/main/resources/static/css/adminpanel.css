@@ -1,0 +1,181 @@
+.Wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 1em;
+    padding: 5em;
+}
+
+.TopBar{
+    grid-area: 1 / 1 / span 1 / span 4;
+}
+
+#TopBarMobile{
+    display: none;
+}
+
+.UserTable{
+    grid-area: 2 / 1 / span 2 / span 3;
+}
+
+.UserTable > table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.UserTable > table  td, .UserTable > table  th{
+    border: 1px solid #ddd;
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    width: 5em;
+}
+
+.UserTable > table tr:nth-child(even){background-color: #f2f2f2;}
+
+.UserTable > table tr:nth-child(odd){background-color: white;}
+
+.UserTable > table tr:hover {background-color: #ddd;}
+
+.UserTable > table th {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.SearchBar-Searchbox{
+    display: inline-flex;
+    width: 100%;
+}
+
+.ActionNav{
+    grid-area: 2 / 4 / span 2 / span 1;
+    align-items: center;
+
+}
+
+.ActionNav > button{
+    width: 100%;
+    border: solid  #6dcb1b;
+    background: #6dcb1b;
+    color: #eeeeee;
+    margin-top: 1em;
+    padding: 0.3em;
+    font-size: 1.2em;
+    text-align: center;
+    outline: none;
+}
+
+i{
+    padding-right: 0.2em;
+}
+
+.ActionNav > button:hover{
+    background: #4CAF50;
+    border: solid  #4CAF50;
+}
+
+#mySecondTable{
+    margin-top: 1em;
+
+}
+
+.users-list > button > i{
+    font-size: 1em;
+}
+
+.PopularEventButton,
+.HideRightNavButton{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    background: #6dcb1b;
+    color: white;
+    display: none;
+}
+
+.PopularEventButton > i{
+    font-size: 3em;
+}
+
+.PopularEventButton:hover{
+    background: #4CAF50;
+}
+
+.HideRightNavButton{
+    position: absolute;
+    right: 102%;
+    top: 50%;
+    display: none;
+    outline: none;
+    border-right: none;
+
+
+}
+
+#CloseActionNav{
+    margin-bottom: 1em;
+    background: #B90808;
+    display: none;
+    padding: 1em;
+}
+
+
+@media only screen and (max-width : 1050px){  body{font-size: 14px;}}
+@media only screen and (max-width : 1000px){  body{font-size: 13px;}}
+@media only screen and (max-width : 950px){  body{font-size: 12px;}}
+@media only screen and (max-width : 900px){  body{font-size: 11px;}}
+@media only screen and (max-width : 850px){  body{font-size: 10px;}}
+
+@media only screen and (max-width : 750px){  body{font-size: 9px;}}
+@media only screen and (max-width : 700px){  body{font-size: 8px;}}
+@media only screen and (max-width : 650px){  body{font-size: 7px;}}
+
+@media only screen and (max-width : 550px){  body{font-size: 6px;}}
+@media only screen and (max-width : 500px){  body{font-size: 5px;}}
+
+
+@media only screen and (max-width : 450px) {
+
+    .Wrapper {
+        padding: 0;
+    }
+
+    #TopBarMobile {
+        display: flex;
+    }
+
+    #TopBarStandard {
+        display: none;
+    }
+
+    .UserTable{
+        grid-area: 2 / 1 / span 2 / span 4;
+    }
+
+    .ActionNav{
+        display: none;
+    }
+
+    body{
+        font-size: 9px;
+    }
+
+    .PopularEventButton{
+        display: flex;
+    }
+
+    .ActionNav{
+        position: fixed;
+        top: 50%;
+        right: 0;
+        display: none;
+        font-size: 1em;
+        border-right: none;
+
+    }
+
+
+
+}

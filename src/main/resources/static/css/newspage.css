@@ -1,0 +1,186 @@
+.Wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 1em;
+    padding: 5em;
+}
+
+.TopBar{
+    grid-area: 1 / 1 / span 1 / span 4;
+}
+
+#TopBarMobile{
+    display: none;
+}
+
+.NewsNav{
+    grid-area: 2 / 1 / span 1 / span 3;
+}
+
+.News{
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: solid 5px #6dcb1b;
+    padding: 0.5em 0.5em;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+
+}
+
+.Image > img{
+    width: 6em;
+    height:6em;
+
+    border-radius: 50%;
+    border: solid 3px #2699fb;
+    margin-right:  1.5em;
+    margin-left: 1em;
+}
+
+.NewsText{
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.NewsText > h{
+    font-size: 1.6em;
+    color: #2699fb;
+    font-weight: bold;
+
+}
+
+.NewsText > p{
+    font-size: 1.1em;
+    font-family: Arial;
+    color: black;
+    padding-right: 1em;
+}
+
+.NewsText > a{
+    font-size: 1.1em;
+    font-family: Arial;
+    color: rgba(63, 37, 37, 0.82);
+
+}
+
+.RightNav{
+    grid-area: 2 / 4 / span 1 / span 1;
+    justify-content: center;
+    position: sticky;
+    top: 7em;
+}
+
+.RightNav > .PopularEvent > img{
+    width: 4em;
+    height: 4em;
+    padding: 0 0.3em;
+
+
+}
+
+
+.PopularEvent > .NewsText > h{
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.PopularEvent > .NewsText > a{
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+.PopularEventButton,
+.HideRightNavButton{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    background: #6dcb1b;
+    color: white;
+    display: none;
+}
+
+.PopularEventButton > i{
+    font-size: 2em;
+}
+
+.PopularEventButton:hover{
+    background: #4CAF50;
+}
+
+.HideRightNavButton{
+    position: absolute;
+    right: 102%;
+    top: 50%;
+    display: none;
+    outline: none;
+    border-right: none;
+
+
+}
+
+
+@media only screen and (max-width : 1050px){body{font-size: 15px; } #TopBarStandard{font-size: 14px;}}
+@media only screen and (max-width : 1000px){body{font-size: 14px} #TopBarStandard{font-size: 13px;}}
+@media only screen and (max-width : 950px){body{font-size: 13px} #TopBarStandard{font-size: 12px;}}
+@media only screen and (max-width : 900px){body{font-size: 12px} #TopBarStandard{font-size: 11px;}}
+@media only screen and (max-width : 850px){body{font-size: 11px} #TopBarStandard{font-size: 10px;}}
+@media only screen and (max-width : 800px){body{font-size: 10px} #TopBarStandard{font-size: 9px;}}
+@media only screen and (max-width : 750px){body{font-size: 9px} #TopBarStandard{font-size: 8px;}}
+@media only screen and (max-width : 700px){body{font-size: 8px} #TopBarStandard{font-size: 7px;}}
+
+
+
+
+@media only screen and (max-width : 450px) {
+
+
+
+
+    .Wrapper {
+        padding: 0;
+    }
+
+    #TopBarMobile {
+        display: flex;
+    }
+
+    #TopBarStandard {
+        display: none;
+    }
+
+    .RightNav{
+        position: sticky;
+        top: 50%;
+        right: 0;
+        display: none;
+        font-size: 2em;
+        border-right: none;
+    }
+
+    .NewsNav{
+        grid-area: 2 / 1 / span 1 / span 4;
+    }
+
+    .News{
+        border-left: none;
+        border-right: none;
+    }
+
+    .PopularEventButton,
+    .HideRightNavButton{
+        display: flex;
+        font-size: 2.5em;
+    }
+
+
+
+}
+
+
+

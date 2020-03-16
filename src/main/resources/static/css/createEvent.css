@@ -1,0 +1,301 @@
+.Wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr 1fr;
+    grid-gap: 1em;
+    padding: 5em;
+}
+
+.TopBar{
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+
+#TopBarMobile{
+    display: none;
+}
+
+.CreateEventForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: 2 / 1 / span 2 / span 1;
+    border: solid 0.3em  #4CAF50;
+    background: white;
+    padding-bottom: 1em;
+}
+
+.CreateEventForm > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    width: 70%;
+}
+
+.CreateEventForm > form > h{
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+input{
+    margin-top: 0.3em;
+    width: 100%;
+    text-align: center;
+}
+
+.EventDataInput{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.1em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.EventDataInput > input{
+    width: 40%;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    text-align: center;
+    padding: 0;
+}
+
+.EventDataInput > h{
+    font-size: 1.2em;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    background: none;
+    color: #3817c6;
+    margin-right: 2em;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator:hover {
+    color: #2699fb;
+}
+
+.CreateEventMap{
+    position: relative;
+    grid-area: 2 / 2 / span 1 / span 1;
+    border: solid 0.3em  #4CAF50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+
+
+}
+
+.CreateEventMap > img{
+    height: 100%;
+    width: 100%;
+}
+
+#blah{
+    display: none;
+}
+
+.CreateEventMap > input{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: 50%;
+    opacity: 50%;
+}
+
+.CreateEventMap > input:hover, input:focus{
+    opacity: 100%;
+}
+
+.image-upload{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image-upload > h{
+    font-size: 2em;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+.image-upload > input {
+    display: none;
+}
+
+.image-upload img
+{
+    width: 100%;
+    cursor: pointer;
+
+}
+
+
+
+.CreateEventDescription{
+    grid-area: 3 / 2 / span 1 / span 1;
+    border: solid 0.3em  #4CAF50;
+}
+
+.CheckBox{
+    margin-top: 2.5em;
+    background: white;
+    padding: 0.5em;
+    border-radius: 1.5em;
+    border: solid 0.3em  #6dcb1b;
+}
+
+.CheckBox > h{
+    font-size: 1.5em;
+    color: black;
+}
+
+.Checkbox-option > h{
+    color: #2699fb;
+}
+
+.CheckBox:hover,.CheckBox:focus{
+    border-color: green;
+}
+
+.Checkbox-option > h:hover{
+    font-weight: bold;
+}
+
+.CreateEventDescription > textarea{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 1.5em;
+    box-sizing: border-box;
+}
+
+.CreateEventDescription > textarea[placeholder]{
+    font-size: 1.3em;
+}
+
+.SearchNavSelect{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.SearchNavSelect > select {
+    width: 100%;
+    cursor: pointer;
+    background: white;
+    color: black;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-weight: bold;
+    padding: 1em 0;
+    padding-left: 1em;
+}
+
+.fa-caret-down {
+    position: absolute;
+    font-size: 2em;
+    right: 1em;
+    pointer-events: none;
+    color: black;
+}
+
+.SearchNavSelect select:hover ~ .fa-caret-down,
+.SearchNavSelect select:focus ~ .fa-caret-down {
+    color: floralwhite;
+}
+
+.CreateEventMobile{
+    grid-area: 2 / 1 / span 1 / span 2;
+    background: white;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+#FormSubmit{
+
+    font-weight: bold;
+
+}
+
+.CreateEventMap:hover,
+.CreateEventDescription:hover,
+.CreateEventForm:hover{
+    border-color: green;
+}
+
+
+
+@media only screen and (max-width : 1050px){body{font-size: 15px; } #TopBarStandard{font-size: 14px;}}
+@media only screen and (max-width : 1000px){body{font-size: 14px} #TopBarStandard{font-size: 13px;}}
+@media only screen and (max-width : 950px){body{font-size: 13px} #TopBarStandard{font-size: 12px;}}
+@media only screen and (max-width : 900px){body{font-size: 12px} #TopBarStandard{font-size: 11px;}}
+@media only screen and (max-width : 850px){body{font-size: 11px} #TopBarStandard{font-size: 10px;}}
+@media only screen and (max-width : 800px){body{font-size: 10px} #TopBarStandard{font-size: 9px;}}
+@media only screen and (max-width : 750px){body{font-size: 9px} #TopBarStandard{font-size: 8px;}}
+@media only screen and (max-width : 650px){body{font-size: 9px} #TopBarStandard{font-size: 7px;}}
+@media only screen and (max-width : 550px){body{font-size: 9px} #TopBarStandard{font-size: 6px;}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 450px){
+
+    .Wrapper{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #TopBarMobile{
+        display: flex;
+    }
+
+    #TopBarStandard{
+        display: none;
+    }
+
+    .CreateEventForm{
+        border: 0;
+        padding-bottom: 0;
+    }
+
+
+    .CreateEventMap{
+        position: static;
+        border: 0;
+    }
+
+
+
+    .CreateEventDescription{
+
+        border: 0;
+
+    }
+}

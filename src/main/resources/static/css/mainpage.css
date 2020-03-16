@@ -1,0 +1,443 @@
+
+.Wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 1em;
+    padding: 5em;
+}
+
+.RightNav{
+    grid-area: 3 / 4 / span 1 / span 1;
+}
+
+.TopBar{
+    grid-area: 1 / 1 / span 1 / span 4;
+}
+
+.SearchNav{
+    display: grid;
+    grid-area: 2 / 1 / span 1 / span 4;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 0.6em;
+    padding: 0;
+}
+
+.SearchBar-SelectNumber{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 0.2em 0;
+}
+
+.SearchBar-SelectNumber > h{
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+}
+
+.search-box-input{
+    border-right: solid 0.3em  #4CAF50;
+    width: 100%;
+
+}
+
+.SelectInputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 0.1em;
+    width: 100%;
+}
+
+.SelectInputs > input{
+    width: 40%;
+    margin: 0 0.4em;
+    border: 0.3em solid #4CAF50;
+    outline: 0;
+    padding-left: 1em;
+}
+
+.SelectInputs > input:hover,
+.SelectInputs > input:focus{
+    border-color: #4CAF50;
+}
+
+#NumebrOfPeopleInput{
+    width: 100%;
+}
+
+.MainContent{
+    display: grid;
+    grid-area: 3 / 1 / span 2 / span 3;
+}
+
+.Publication{
+    background-color: white;
+    height: 24em;
+    border: solid 5px #6dcb1b;
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: row;
+}
+
+.EventInformation{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1em;
+    margin-top: 5em;
+}
+
+.ShortDescription{
+    width: 100%;
+    border: solid 3px rgba(63, 37, 37, 0.82);
+    resize: none;
+    font-family: Arial, serif;
+    text-align: center;
+    padding-top: 1em;
+    box-sizing: border-box;
+}
+
+#EventTitle{
+    display: flex;
+    font-family: Arial, serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: normal;
+    text-align: center;
+    color: indigo;
+}
+
+#EventSport{
+    display: flex;
+    opacity: 0.5;
+    font-family: Arial, serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: normal;
+    text-align: center;
+    color: green;
+}
+
+#EventDate{
+    display: flex;
+    opacity: 0.5;
+    font-family: Arial, serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: normal;
+    text-align: center;
+    color: #707070;
+}
+
+#EventAddress{
+    display: flex;
+    opacity: 0.5;
+    font-family: Arial, serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3817c6;
+}
+
+#EventPeopleNumberElement{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fa-users{
+    color: darkgreen;
+    font-size: 1.7em;
+    padding-right: 0.3em;
+}
+
+#EventPeopleNumberElement > h{
+    font-size: 1.2em;
+    font-weight: bold;
+
+}
+
+#Age{
+    display: flex;
+    opacity: 0.5;
+    font-family: Arial, serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.37;
+    letter-spacing: normal;
+    text-align: center;
+    color: darkmagenta;
+}
+
+.fa-volleyball-ball{
+    font-size: 2.5em;
+    padding: 0.5em;
+    color: #B90808;
+    display: flex;
+}
+
+.ImageAndDescription{
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 2em 1em 3em;
+}
+
+.ImageAndDescription > img{
+    width: 20em;
+    height: 10em;
+    margin-bottom: 2em;
+    border: solid 3px rgba(63, 37, 37, 0.82);
+    box-sizing: border-box;
+}
+
+.SeeDetails{
+    text-decoration: none ;
+    border: solid 3px rgba(63, 37, 37, 0.82);
+    background-color: rgba(167, 18, 212, 0.92);
+    padding: 1em 5em;
+    color: white;
+    font-weight: bold;
+    margin-top: 2em;
+    font-size: 1em;
+}
+
+.SeeDetails:hover{
+    background: darkmagenta;
+}
+
+#SubmitButton{
+    background: #4CAF50;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+}
+
+#SubmitButton:hover{
+    background: green;
+}
+
+.MobileShowEvents{
+    display: flex;
+    grid-area: 2 / 1 / span 1 / span 4;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+
+.MobileShowEvents > h{
+    font-size: 2em;
+    display: flex;
+    text-align: center;
+    margin-bottom: 0.2em;
+
+}
+
+.MobileShowEvents-input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.MobileShowEvents-input > input{
+    width: 40%;
+    border-radius: 1em;
+    border: solid 3px #4CAF50;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    text-align: center;
+    outline: none;
+    font-size: 1.2em;
+}
+
+#button1{
+    background: white;
+}
+
+#button2{
+    background: transparent;
+}
+
+.MobileShowEvents{
+    display: none;
+}
+
+#TopBarMobile{
+    display: none;
+}
+
+
+.PopularEventButton,
+.HideRightNavButton{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    background: #6dcb1b;
+    color: white;
+    display: none;
+}
+
+.PopularEventButton > i{
+    font-size: 2em;
+}
+
+.PopularEventButton:hover{
+    background: #4CAF50;
+}
+
+.HideRightNavButton{
+    position: absolute;
+    right: 102%;
+    top: 50%;
+    display: none;
+    outline: none;
+    border-right: none;
+
+
+}
+
+
+
+@media only screen and (max-width : 1050px){  body{font-size: 14px;}}
+@media only screen and (max-width : 1000px){  body{font-size: 13px;}}
+@media only screen and (max-width : 950px){  body{font-size: 12px;} .ShortDescription,.Publication > a > img{font-size: 12px}}
+@media only screen and (max-width : 900px){  body{font-size: 11px;}}
+@media only screen and (max-width : 850px){  body{font-size: 10px;}}
+
+@media only screen and (max-width : 750px){  body{font-size: 9px;}}
+@media only screen and (max-width : 700px){  body{font-size: 8px;}}
+@media only screen and (max-width : 650px){  body{font-size: 7px;}}
+
+@media only screen and (max-width : 550px){  body{font-size: 6px;}}
+@media only screen and (max-width : 500px){  body{font-size: 5px;}}
+@media only screen and (max-width : 450px){
+
+
+    .MobileShowEvents{
+        display: flex;
+    }
+
+    #SearchForm{
+        display: none;
+    }
+
+    .Wrapper{
+        padding: 0;
+    }
+
+    #TopBarStandard{
+        display: none;
+    }
+
+    #TopBarMobile{
+        display: flex;
+    }
+
+    .MainContent{grid-area: 3 / 1 / span 2 / span 4;}
+
+
+    .SelectInputs{
+        width: 50%;
+    }
+
+    .Publication{
+        height: auto;
+        border: solid 5px #6dcb1b;
+        border-left: none;
+        border-right: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .EventInformation{
+
+        margin-top: 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+    }
+
+    .ImageAndDescription{
+        width: 100%;
+        margin: 0;
+    }
+
+    .ImageAndDescription > img{
+        width: 100%;
+        height: 20em;
+        border-left: none;
+        border-right: none;
+        margin-top: 2em;
+
+    }
+
+    .ShortDescription{
+        border-right: none;
+        border-left: none;
+        border-bottom: none;
+        font-size: 1.5em;
+    }
+
+    .SeeDetails{
+       margin-bottom: 1em;
+    }
+
+    .PopularEventButton,
+    .HideRightNavButton{
+        display: flex;
+        font-size: 2.5em;
+    }
+
+    .RightNav{
+        position: sticky;
+        top: 10%;
+        right: 0;
+        display: none;
+        font-size: 1.1em;
+        border-right: none;
+    }
+
+    body{
+        font-size: 9px;
+    }
+
+
+
+
+
+}
+
+
+
+
+
+@media only screen and (max-width : 400px){  body{font-size: 9px;}}
+@media only screen and (max-width : 350px){  body{font-size: 8px;}}
+@media only screen and (max-width : 300px){  body{font-size: 7px;}}
+@media only screen and (max-width : 300px){  body{font-size: 6px;}}

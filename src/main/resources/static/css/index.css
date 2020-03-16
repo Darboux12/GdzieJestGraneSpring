@@ -1,0 +1,126 @@
+.MainContainer{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#FormAndButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+input{margin: 0.5em 0;}
+
+p{
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    font-weight: bold;
+    font-size: 1.75em;
+    line-height: 1.34;
+    text-align: center;
+    color: #2726a6;
+}
+
+#SignInButton{
+    background-color: rgba(18, 50, 212, 0.92);
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#LogInButton{
+    background-color: rgba(243, 115, 53, 0.92);
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    border: solid 3px rgba(243, 115, 53, 0.92);
+    width: 100%;
+}
+
+.Logo{
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3em;
+}
+
+.LogoHeaders{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content:center;
+
+}
+
+.LogoHeader1{
+    color: #3817c6;
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 1.5em;
+
+}
+
+.LogoHeader2{
+    color: black;
+    font-family: cursive;
+    font-size: 1em;
+
+
+}
+
+.Logo > img{
+    width: 5em;
+
+}
+
+#ball{
+    width: 80%;
+    border: solid 5px rgba(18, 50, 212, 0.92);
+}
+
+a{
+
+    border-radius: 1.5em;
+    border: solid 0.3em  rgba(34, 0, 255, 0.92);
+    background-color: #ffffff;
+    line-height: 2.5em;
+    font-size: 1em;
+    text-align: left;
+    outline: none;
+    text-decoration: none;
+}
+
+@media only screen and (max-width : 1000px){  body{font-size: 14px;}}
+@media only screen and (max-width : 900px){  body{font-size: 13px;}}
+@media only screen and (max-width : 800px) {
+    body {font-size: 12px}
+    .MainContainer {flex-direction: column;}
+    .Logo{margin-right: 0}
+}
+@media only screen and (max-width : 450px){  body{font-size: 12px;}}
+@media only screen and (max-width : 400px){  body{font-size: 10px;}}
+@media only screen and (max-width : 350px){  body{font-size: 9px;}}
+@media only screen and (max-width : 300px){  body{font-size: 8px;}}
+@media only screen and (max-width : 250px){  body{font-size: 7px;}}
+
+
+
+
+
+
