@@ -22,14 +22,14 @@ public class BasicController {
     @GetMapping("/print")
     public String show(Model model){
 
-     //   User user = new User("Jek","ha");
+        //User user = new User("Jek","ha",3);
 
        // userRepository.save(user);
 
         User user = userService.findUserById(1);
 
 
-        model.addAttribute("user",user);
+     model.addAttribute("user",user);
 
 
         return "show";
