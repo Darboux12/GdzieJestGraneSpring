@@ -1,14 +1,15 @@
 package com.gjg.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "USER")
-@SecondaryTable(name = "ROLE", pkJoinColumns = @PrimaryKeyJoinColumn(name = "id_role"))
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_user")
     private int id_user;
 
@@ -18,15 +19,13 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "role", table="ROLE")
-    private String role;
 
-    public int getId_user() {
-        return id_user;
-    }
 
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
+    public User(){};
+
+    public User(String email, String password){
+        this.email = email;
+        this.password = password;
     }
 
     public String getEmail() {
@@ -45,11 +44,4 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 }
