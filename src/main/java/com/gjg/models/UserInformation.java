@@ -21,6 +21,8 @@ public class UserInformation {
     @Column(name = "creation_date")
     private Timestamp creation_date;
 
+    public UserInformation(){}
+
 
     public UserInformation(String login, int age, Timestamp creation_date) {
         this.login = login;

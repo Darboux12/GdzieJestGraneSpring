@@ -1,6 +1,7 @@
 package com.gjg.models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "USER")
@@ -17,9 +18,12 @@ public class User{
     @Column(name = "password")
     private String password;
 
-    @ManyToOne()
-    @JoinColumn(name="id_role", nullable=false)
-    private Role role;
+    @ManyToMany
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "id_user"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
 
     @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
     @JoinColumn(name = "id_user_info", referencedColumnName = "id_user_info", nullable = false)
@@ -27,10 +31,10 @@ public class User{
 
     public User(){}
 
-    public User(String email, String password, Role role, UserInformation userInformation){
+    public User(String email, String password, Set<Role> roles, UserInformation userInformation){
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.roles = roles;
         this.userInformation = userInformation;
     }
 
@@ -58,19 +62,19 @@ public class User{
         this.id_user = id_user;
     }
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
     public UserInformation getUserInformation() {
         return userInformation;
     }
 
     public void setUserInformation(UserInformation userInformation) {
         this.userInformation = userInformation;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

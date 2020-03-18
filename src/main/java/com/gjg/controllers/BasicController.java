@@ -10,6 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Controller
 public class BasicController {
@@ -25,24 +29,25 @@ public class BasicController {
     @GetMapping("/print")
     public String show(Model model){
 
+        Set<Role> roles = new HashSet<>();
 
-
-
+        roles.add(new Role(1,"Admin"));
+     //   roles.add(new Role(2,"Kot"));
 
        // User user = userService.findUserById(1);
 
       //  User user = userService.findUserById(1);
 
-        User user = new User("Hej","ha",new Role(1,"admin"),new UserInformation("a",6,java.sql.Timestamp.valueOf("2017-11-15 15:30:14.332")));
+       User user = new User("Hej","ha",roles ,new UserInformation("a",6,java.sql.Timestamp.valueOf("2017-11-15 15:30:14.332")));
 
 
-        userService.addUser(user);
+      userService.addUser(user);
 
 
 
 
 
-     model.addAttribute("user",user);
+     model.addAttribute("user",this.userService.findUserByEmail("Hej"));
 
 
         return "show";

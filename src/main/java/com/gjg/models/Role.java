@@ -1,6 +1,7 @@
 package com.gjg.models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -15,6 +16,8 @@ public class Role {
     @Column(name = "role")
     private String role;
 
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
 
     public Role(){}
 
@@ -37,5 +40,13 @@ public class Role {
 
     public void setId_role(int id_role) {
         this.id_role = id_role;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }
