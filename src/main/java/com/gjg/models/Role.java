@@ -2,6 +2,7 @@ package com.gjg.models;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "Role")
 public class Role {
@@ -13,6 +14,7 @@ public class Role {
 
     @Column(name = "role")
     private String role;
+
 
     public Role(){}
 

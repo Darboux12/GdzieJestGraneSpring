@@ -17,16 +17,21 @@ public class User{
     @Column(name = "password")
     private String password;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name="id_role", nullable=false)
     private Role role;
 
-    public User(){};
+    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    @JoinColumn(name = "id_user_info", referencedColumnName = "id_user_info", nullable = false)
+    private UserInformation userInformation;
 
-    public User(String email, String password,Role role){
+    public User(){}
+
+    public User(String email, String password, Role role, UserInformation userInformation){
         this.email = email;
         this.password = password;
         this.role = role;
+        this.userInformation = userInformation;
     }
 
     public String getEmail() {
@@ -59,5 +64,13 @@ public class User{
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public UserInformation getUserInformation() {
+        return userInformation;
+    }
+
+    public void setUserInformation(UserInformation userInformation) {
+        this.userInformation = userInformation;
     }
 }

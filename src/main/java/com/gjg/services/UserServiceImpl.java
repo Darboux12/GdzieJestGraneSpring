@@ -18,8 +18,13 @@ public class UserServiceImpl implements UserService{
         return this.userRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public void deleteUserById(int id) {
+        this.userRepository.deleteById(id);
+    }
 
-
-
-
+    @Override
+    public void addUser(User user) {
+        this.userRepository.save(user);
+    }
 }
