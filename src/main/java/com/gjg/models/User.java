@@ -1,6 +1,8 @@
 package com.gjg.models;
 
 import javax.persistence.*;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -18,12 +20,15 @@ public class User{
     @Column(name = "password")
     private String password;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_role",
-            joinColumns = @JoinColumn(name = "id_user"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "user_role",
+            joinColumns = { @JoinColumn(name = "id_user") },
+            inverseJoinColumns = { @JoinColumn(name = "id_role") })
+    private Set<Role> roles = new HashSet<>();
 
     @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
     @JoinColumn(name = "id_user_info", referencedColumnName = "id_user_info", nullable = false)
@@ -31,10 +36,9 @@ public class User{
 
     public User(){}
 
-    public User(String email, String password, Set<Role> roles, UserInformation userInformation){
+    public User(String email, String password,UserInformation userInformation){
         this.email = email;
         this.password = password;
-        this.roles = roles;
         this.userInformation = userInformation;
     }
 

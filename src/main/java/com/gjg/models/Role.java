@@ -1,6 +1,7 @@
 package com.gjg.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -16,13 +17,17 @@ public class Role {
     @Column(name = "role")
     private String role;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "roles")
+    private Set<User> users = new HashSet<>();
 
     public Role(){}
 
-    public Role(int id_role, String role) {
-        this.id_role = id_role;
+    public Role(String role) {
         this.role = role;
     }
 

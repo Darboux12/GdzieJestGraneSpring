@@ -4,31 +4,51 @@ import com.gjg.models.Role;
 import com.gjg.models.User;
 import com.gjg.models.UserInformation;
 
+import com.gjg.respositories.RoleRepository;
 import com.gjg.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-
 
 @Controller
 public class BasicController {
 
     private final UserService userService;
+    private RoleRepository roleRepository;
 
     @Autowired
-    public BasicController(UserService userService) {
+    public BasicController(UserService userService, RoleRepository roleRepository) {
         this.userService = userService;
+        this.roleRepository = roleRepository;
     }
 
 
     @GetMapping("/print")
     public String show(Model model){
 
+        User user = new User("Ho","ha",new UserInformation("b",6,java.sql.Timestamp.valueOf("2017-11-15 15:30:14.332")));
+
+        Role role = roleRepository.findRoleByName("admin");
+
+        user.getRoles().add(role);
+
+        role.getUsers().add(user);
+
+        userService.addUser(user);
+
+
+
+
+
+
+
+
+
+
+
+        /*
         Set<Role> roles = new HashSet<>();
 
         roles.add(new Role(1,"Admin"));
@@ -47,7 +67,7 @@ public class BasicController {
 
 
 
-     model.addAttribute("user",this.userService.findUserByEmail("Hej"));
+     model.addAttribute("user",this.userService.findUserByEmail("Hej")); */
 
 
         return "show";
