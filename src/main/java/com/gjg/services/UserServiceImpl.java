@@ -2,12 +2,15 @@ package com.gjg.services;
 
 import com.gjg.models.User;
 import com.gjg.respositories.UserRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService{
 
     private UserRepository userRepository;
+
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -25,6 +28,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void addUser(User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         this.userRepository.save(user);
     }
 

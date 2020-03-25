@@ -20,6 +20,9 @@ public class User{
     @Column(name = "password")
     private String password;
 
+    @Transient
+    private String passwordConfirmation;
+
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
@@ -80,5 +83,13 @@ public class User{
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getPasswordConfirmation() {
+        return passwordConfirmation;
+    }
+
+    public void setPasswordConfirmation(String passwordConfirmation) {
+        this.passwordConfirmation = passwordConfirmation;
     }
 }

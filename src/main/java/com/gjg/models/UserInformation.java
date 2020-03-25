@@ -55,7 +55,11 @@ public class UserInformation {
         return id_user_info;
     }
 
-    public void setId_user_info(int id_user_info) {
-        this.id_user_info = id_user_info;
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 }
