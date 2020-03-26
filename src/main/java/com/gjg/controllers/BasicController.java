@@ -3,8 +3,8 @@ package com.gjg.controllers;
 import com.gjg.models.Role;
 import com.gjg.models.User;
 import com.gjg.models.UserInformation;
-
 import com.gjg.respositories.RoleRepository;
+import com.gjg.respositories.UserRepository;
 import com.gjg.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,27 +16,41 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BasicController {
 
     private final UserService userService;
-    private RoleRepository roleRepository;
+
+    private final RoleRepository roleRepository;
+
+
+
 
     @Autowired
-    public BasicController(UserService userService, RoleRepository roleRepository) {
+    public BasicController(UserService userService, RoleRepository roleRepository, UserRepository userRepository, RoleRepository roleRepository1) {
         this.userService = userService;
-        this.roleRepository = roleRepository;
+
+        this.roleRepository = roleRepository1;
     }
 
 
-    @GetMapping("/print")
+    @GetMapping("/find")
     public String show(Model model){
 
-        User user = new User("Ho","ha",new UserInformation("b",6,java.sql.Timestamp.valueOf("2017-11-15 15:30:14.332")));
 
-        Role role = roleRepository.findRoleByName("admin");
-
-        user.getRoles().add(role);
-
-        role.getUsers().add(user);
+        User user = new User("Tmail@op.pl","Tpassword",new UserInformation("Tlogin",2));
 
         userService.addUser(user);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

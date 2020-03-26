@@ -1,6 +1,10 @@
 package com.gjg.models;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,9 +19,13 @@ public class User{
     private int id_user;
 
     @Column(name = "email")
+    @Email(message = "*Please provide a valid Email")
+    @NotEmpty(message = "*Please provide an email")
     private String email;
 
     @Column(name = "password")
+    @Length(min = 5, message = "*Your password must have at least 5 characters")
+    @NotEmpty(message = "*Please provide your password")
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY,
@@ -33,6 +41,9 @@ public class User{
     @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
     @JoinColumn(name = "id_user_info", referencedColumnName = "id_user_info", nullable = false)
     private UserInformation userInformation;
+
+    @Column(name = "active")
+    private Boolean active;
 
     public User(){}
 
@@ -80,5 +91,13 @@ public class User{
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }

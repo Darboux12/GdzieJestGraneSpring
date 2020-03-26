@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-
+    <title>Log in</title>
     <link rel="stylesheet" th:href="@{/css/general.css}"/>
     <link rel="stylesheet" th:href="@{/css/login.css}"/>
-    <link rel="stylesheet" th:href="@{/images/website_icon.png}"/>
-
-    <title>Log in</title>
-
+    <link rel="icon" th:href="@{/images/website_icon.png}">
 </head>
 
 <body>
@@ -18,7 +15,6 @@
 <div class="MainContainer">
 
     <div class="Logo">
-
         <img class="LogoImage" th:src="@{/images/logo-no-writing.png}">
 
         <div class="LogoHeaders">
@@ -32,13 +28,17 @@
 
         <p>Log in and do not miss any game!</p>
 
-        <form id="LogInForm" action="?page=login" method="POST" >
-            <input name="email" type="text" placeholder="Enter your email..." onfocus="this.placeholder=''" onblur="this.placeholder='Enter your email...'">
-            <input name="password" type="password" placeholder="Enter your password..." onfocus="this.placeholder=''" onblur="this.placeholder='Enter your password...'">
+        <form id="LogInForm" th:action="@{/login}" method="POST" >
+            <input id="user_name" name="user_name" type="text" placeholder="Enter your email..." onfocus="this.placeholder=''" onblur="this.placeholder='Enter your email...'">
+            <input id="password" name="password" type="password" placeholder="Enter your password..." onfocus="this.placeholder=''" onblur="this.placeholder='Enter your password...'">
             <input id="LogInButton" type="submit"  value="Zaloguj się!">
         </form>
 
-        <a href="?page=signin" id="SignInButton">Don't know where's playing on? Sign in!</a>
+        <a href="/registration" id="SignInButton">Don't know where's playing on? Sign in!</a>
+
+        <div align="center" th:if="${param.error}">
+            <p style="font-size: 16; color: #FF1C19;">Username or password invalid, please verify</p>
+        </div>
 
     </div>
 
